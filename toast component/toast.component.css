@@ -1,0 +1,140 @@
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001; /* Above everything else */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: 350px;
+  }
+  
+  .toast {
+    width: 100%;
+    min-width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    background: white;
+    position: relative;
+  }
+  
+  .toast-content {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .toast i {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  
+  .message {
+    flex-grow: 1;
+    padding-right: 5px;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: #777;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  
+  .close-btn:hover {
+    color: #333;
+  }
+  
+  /* Toast types with different colors */
+  .toast.success {
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    border-left: 5px solid #388E3C;
+  }
+  
+  .toast.error {
+    background: linear-gradient(to right, #f44336, #e53935);
+    border-left: 5px solid #d32f2f;
+  }
+  
+  .toast.warning {
+    background: linear-gradient(to right, #ff9800, #fb8c00);
+    border-left: 5px solid #f57c00;
+  }
+  
+  .toast.info {
+    background: linear-gradient(to right, #2196F3, #1e88e5);
+    border-left: 5px solid #1976D2;
+  }
+  
+  /* Icons colors */
+  .toast.success i {
+    color: #C8E6C9;
+  }
+  
+  .toast.error i {
+    color: #FFCDD2;
+  }
+  
+  .toast.warning i {
+    color: #FFE0B2;
+  }
+  
+  .toast.info i {
+    color: #BBDEFB;
+  }
+  
+  .toast.success .message,
+  .toast.error .message,
+  .toast.warning .message,
+  .toast.info .message {
+    color: white;
+  }
+  
+  .toast.success .close-btn,
+  .toast.error .close-btn,
+  .toast.warning .close-btn,
+  .toast.info .close-btn {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .toast.success .close-btn:hover,
+  .toast.error .close-btn:hover,
+  .toast.warning .close-btn:hover,
+  .toast.info .close-btn:hover {
+    color: white;
+  }
+  
+  /* Progress bar animation */
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    animation: progress-bar-animation 3s linear forwards;
+  }
+  
+  @keyframes progress-bar-animation {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
+  
+  /* For small devices */
+  @media (max-width: 576px) {
+    .toast-container {
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: calc(100% - 20px);
+    }
+  } 

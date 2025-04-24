@@ -1,0 +1,14 @@
+<div class="toast-container">
+    <div
+      *ngFor="let toast of toasts"
+      [ngClass]="['toast', toast.type]"
+      [@toastAnimation]="'visible'"
+    >
+      <div class="toast-content">
+        <i [class]="getIcon(toast.type)"></i>
+        <div class="message">{{ toast.message }}</div>
+        <button class="close-btn" (click)="removeToast(toast.id)">×</button>
+      </div>
+      <div class="progress-bar" [ngStyle]="getProgressBarStyle(toast)"></div>
+    </div>
+  </div> 
